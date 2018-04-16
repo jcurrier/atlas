@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Optional;
 
-@Path("/users")
+@Path("/users/")
 @Produces(MediaType.APPLICATION_JSON)
 public class UsersResource {
     private static final Logger LOGGER = LoggerFactory.getLogger(UsersResource.class);
