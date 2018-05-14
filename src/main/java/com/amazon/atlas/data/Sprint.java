@@ -2,7 +2,9 @@ package com.amazon.atlas.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 public class Sprint {
@@ -85,8 +87,8 @@ public class Sprint {
        this(UUID.randomUUID().toString(), project, name, startDate, endDate, new Date(), new Date());
     }
 
-    public Sprint(String id, Project project, String name, Date startDate, Date endDate, Date createdOn,
-                  Date lastUpdated) {
+    public Sprint(String id, Project project, String name, Date startDate, Date endDate,
+        Date createdOn, Date lastUpdated) {
         this.mId = id;
         this.mProjectId = project.getId();
         this.mName = name;

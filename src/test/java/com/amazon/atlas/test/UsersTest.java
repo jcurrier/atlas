@@ -3,6 +3,7 @@ package com.amazon.atlas.test;
 import com.amazon.atlas.AtlasServiceApplication;
 import com.amazon.atlas.AtlasServiceConfiguration;
 import com.amazon.atlas.data.User;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.dropwizard.testing.ResourceHelpers;
 import io.dropwizard.testing.junit.DropwizardAppRule;
 import org.eclipse.jetty.http.HttpStatus;
@@ -42,7 +43,10 @@ public class UsersTest {
 
     @Test
     public void createTestUser() throws Exception {
+
         User testUser = new User("test@test.com", "super_secret", true);
+        String json = new ObjectMapper().writeValueAsString(testUser);
+
         Response r = client.target("http://localhost:" + RULE.getLocalPort() + RESOURCE_PATH)
                 .request()
                 .post(Entity.entity(testUser, MediaType.APPLICATION_JSON_TYPE));

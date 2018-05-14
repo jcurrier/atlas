@@ -1,5 +1,6 @@
 package com.amazon.atlas.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
@@ -12,47 +13,52 @@ public class User {
     private Date mLastUpdated;
     private boolean mIsAdmin = false;
 
-    @JsonProperty
+    @JsonProperty("Id")
     public String getId() {
         return mId;
     }
 
+    @JsonProperty("Id")
     public void setId(String id) {
         this.mId = mId;
     }
 
-    @JsonProperty
+    @JsonProperty("Email")
     public String getEmail() {
         return mEmail;
     }
 
+    @JsonProperty("Email")
     public void setEmail(String email) {
         this.mEmail = mEmail;
     }
 
-    @JsonProperty
+    @JsonProperty("Password")
     public String getPassword() {
         return mPassword;
     }
 
+    @JsonProperty("Password")
     public void setPassword(String password) {
         this.mPassword = mPassword;
     }
 
-    @JsonProperty
+    @JsonProperty("LastUpdated")
     public Date getLastUpdated() {
         return mLastUpdated;
     }
 
+    @JsonProperty("LastUpdated")
     public void setLastUpdated(Date lastUpdated) {
         this.mLastUpdated = mLastUpdated;
     }
 
-    @JsonProperty
+    @JsonProperty("IsAdmin")
     public boolean getIsAdmin() {
         return mIsAdmin;
     }
 
+    @JsonProperty("IsAdmin")
     public void setIsAdmin(boolean isAdmin) {
         this.mIsAdmin = isAdmin;
     }

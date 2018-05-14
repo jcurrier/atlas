@@ -51,6 +51,7 @@ logging:
 
     # Sets the level for 'com.example.app' to DEBUG.
     com.example.app: DEBUG
+    com.amazon.atlas: DEBUG
 
     # Redirects SQL logs to a separate file
     org.hibernate.SQL:

@@ -30,7 +30,7 @@ public class AtlasServiceApplication extends Application<AtlasServiceConfigurati
 
     @Override
     public String getName() {
-        return "hello-world";
+        return "Atlas";
     }
 
     @Override
