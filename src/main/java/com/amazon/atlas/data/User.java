@@ -1,5 +1,6 @@
 package com.amazon.atlas.data;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -10,6 +11,8 @@ public class User {
     private String mId;
     private String mEmail;
     private String mPassword;
+
+    @JsonIgnore
     private Date mLastUpdated;
     private boolean mIsAdmin = false;
 
@@ -44,11 +47,17 @@ public class User {
     }
 
     @JsonProperty("LastUpdated")
+    @JsonFormat(
+            shape = JsonFormat.Shape.STRING,
+            pattern = "dd-MM-yyyy hh:mm:ss")
     public Date getLastUpdated() {
         return mLastUpdated;
     }
 
     @JsonProperty("LastUpdated")
+    @JsonFormat(
+            shape = JsonFormat.Shape.STRING,
+            pattern = "dd-MM-yyyy hh:mm:ss")
     public void setLastUpdated(Date lastUpdated) {
         this.mLastUpdated = mLastUpdated;
     }
