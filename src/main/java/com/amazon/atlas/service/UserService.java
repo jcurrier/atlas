@@ -117,12 +117,12 @@ public class UserService {
         assert userId != null;
         Optional<User> foundUser;
 
-        LOGGER.info("Finding user id {s}", userId);
+        LOGGER.info("Finding user id {" + userId + "}");
         try {
             Table userTable = m_dynamo.getTable(USER_TABLE_NAME);
 
             Item item = userTable.getItem("Id", userId,
-                    "Id, EmailAddress, Password, IsAdmin", null);
+                    "Id, EmailAddress, Password, LastUpdated, IsAdmin", null);
 
             if(item != null) {
                 ObjectMapper mapper = new ObjectMapper();
@@ -144,7 +144,7 @@ public class UserService {
     public void delete(String userId) throws NotFoundException, InternalServiceException {
        assert userId != null;
 
-        LOGGER.info("Deleting user ({s})", userId);
+        LOGGER.info(String.format("Deleting user {%s}", userId));
 
         DeleteItemOutcome result = null;
         try {

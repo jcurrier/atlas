@@ -44,15 +44,12 @@ server:
 logging:
 
   # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
-  level: INFO
+  level: ERROR
 
   # Logger-specific levels.
   loggers:
 
     # Sets the level for 'com.example.app' to DEBUG.
-    com.example.app: DEBUG
-    com.amazon.atlas: DEBUG
-
-    # Redirects SQL logs to a separate file
-    org.hibernate.SQL:
-      level: DEBUG
+    com.example.app: INFO
+    com.amazon.atlas: INFO
+    com.amazonaws: ERROR

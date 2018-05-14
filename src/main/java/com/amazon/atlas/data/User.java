@@ -3,6 +3,7 @@ package com.amazon.atlas.data;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.joda.time.DateTime;
 
 import java.util.Date;
 import java.util.UUID;
@@ -11,8 +12,6 @@ public class User {
     private String mId;
     private String mEmail;
     private String mPassword;
-
-    @JsonIgnore
     private Date mLastUpdated;
     private boolean mIsAdmin = false;
 
@@ -23,17 +22,17 @@ public class User {
 
     @JsonProperty("Id")
     public void setId(String id) {
-        this.mId = mId;
+        this.mId = id;
     }
 
-    @JsonProperty("Email")
+    @JsonProperty("EmailAddress")
     public String getEmail() {
         return mEmail;
     }
 
-    @JsonProperty("Email")
+    @JsonProperty("EmailAddress")
     public void setEmail(String email) {
-        this.mEmail = mEmail;
+        this.mEmail = email;
     }
 
     @JsonProperty("Password")
@@ -43,7 +42,7 @@ public class User {
 
     @JsonProperty("Password")
     public void setPassword(String password) {
-        this.mPassword = mPassword;
+        this.mPassword = password;
     }
 
     @JsonProperty("LastUpdated")
@@ -59,7 +58,7 @@ public class User {
             shape = JsonFormat.Shape.STRING,
             pattern = "dd-MM-yyyy hh:mm:ss")
     public void setLastUpdated(Date lastUpdated) {
-        this.mLastUpdated = mLastUpdated;
+        this.mLastUpdated = lastUpdated;
     }
 
     @JsonProperty("IsAdmin")
